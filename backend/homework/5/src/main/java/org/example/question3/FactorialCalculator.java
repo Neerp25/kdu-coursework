@@ -17,7 +17,7 @@ public class FactorialCalculator extends Thread{
 
     public void run() {
             factorial = calculateFactorial(number);
-//            System.out.println("Factorial calculated: " + factorial);
+
         ConsoleLogger.infoMethod("Factorial calculated: " + factorial);
 
 

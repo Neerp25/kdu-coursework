@@ -28,7 +28,7 @@ public class Main {
         }
 
 
-//        System.out.println("Main thread finished.");
+
         ConsoleLogger.infoMethod("Main thread finished.");
 
     }
