@@ -54,7 +54,7 @@ private List<Coins> loadCoinsFromCSV(String filePath) {
             long circulatingSupply = Long.parseLong(nextLine[circulatingSupplyIndex]);
 
             // Create a new Coin object
-            Coin coinnew = new Coin(rank,symbol, name, price, circulatingSupply);
+            Coins coinnew = new Coins(rank,symbol, name, price, circulatingSupply);
             coins.add(coinnew);
         }
     } catch (IOException e) {
@@ -182,8 +182,8 @@ private List<Coins> loadCoinsFromCSV(String filePath) {
     }
 
     public Coins getCoinDetails(String coinCode) {
-        for (Coins coin : coins) {
-            if (coin.getCode().equals(coinCode)) {
+        for (Coins coins : coins) {
+            if (coins.getCode().equals(coinCode)) {
                 return coins;
             }
         }

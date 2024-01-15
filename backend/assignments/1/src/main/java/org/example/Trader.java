@@ -1,6 +1,5 @@
 package org.example;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.locks.Lock;
@@ -84,12 +83,12 @@ public class Trader {
             // Check if the trader has enough balance and the coin has enough volume
             if (balance >= coin.getPrice() * quantity && coin.getVolume() >= quantity) {
                 // Deduct the cost from the trader's balance
-                balance -= coins.getPrice() * quantity;
+                balance -= coin.getPrice() * quantity;
 
                 // Update the trader's portfolio or perform other necessary actions
                 // For example, add the bought coins to the trader's portfolio
 
-                ConsoleLogger.infoMethod("Coins bought successfully - Coin: " + coins.getCode() + ", Quantity: " + quantity);
+                ConsoleLogger.infoMethod("Coins bought successfully - Coin: " + coin.getCode() + ", Quantity: " + quantity);
             } else {
 
                 ConsoleLogger.infoMethod("\"Failed to buy coins - Insufficient balance or insufficient volume.");
@@ -101,7 +100,7 @@ public class Trader {
 
     private final Lock portfolioLock = new ReentrantLock();
     private Map<String, Integer> portfolio;
-    public boolean hasSufficientCoins(Coin coin, int quantity) {
+    public boolean hasSufficientCoins(Coins coin, int quantity) {
         try {
             portfolioLock.lock();
 
@@ -116,7 +115,7 @@ public class Trader {
         try {
             portfolioLock.lock();
             // Check if the trader has enough of the specified coin in their portfolio
-            if (portfolio.containsKey(coins.getCode()) && portfolio.get(coin.getCode()) >= quantity) {
+            if (portfolio.containsKey(coin.getCode()) && portfolio.get(coin.getCode()) >= quantity) {
                 // Perform the actual selling logic
                 portfolio.put(coin.getCode(), portfolio.get(coin.getCode()) - quantity);
 
