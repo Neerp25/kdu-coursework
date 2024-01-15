@@ -1,12 +1,12 @@
 package org.example;
 
-public class Coin {
+public class Coins {
     private int rank;
     private String code;
     private String name;
     private double price;
     private long volume;
-    public Coin(int rank,String code,String name,double price,long volume){
+    public Coins(int rank,String code,String name,double price,long volume){
         this.rank=rank;
         this.code=code;
         this.name=name;
@@ -55,7 +55,7 @@ public class Coin {
         this.rank = rank;
     }
     public String toString() {
-        return "Coin{" +
+        return "Coins{" +
                 "rank=" + rank +
                 ", name='" + name + '\'' +
                 ", symbol='" + code + '\'' +

@@ -19,7 +19,7 @@ import java.util.concurrent.Executors;
 import java.util.stream.Collectors;
 
 public class CryptoTradingApplication {
-    private List<Coin> coins;
+    private List<Coins> coins;
     private List<Trader> traders;
 
     public void loadData() {
@@ -31,8 +31,8 @@ public class CryptoTradingApplication {
         this.traders = loadTradersFromCSV("C:\\Users\\Asus\\kdu\\kdu-coursework\\backend\\assignments\\1\\src\\main\\resources\\traders.csv");
     }
 
-private List<Coin> loadCoinsFromCSV(String filePath) {
-    List<Coin> coins = new ArrayList<>();
+private List<Coins> loadCoinsFromCSV(String filePath) {
+    List<Coins> coins = new ArrayList<>();
     try (CSVReader reader = new CSVReader(new FileReader(filePath))) {
         String[] headers = reader.readNext(); // Read the header row
 
@@ -54,8 +54,8 @@ private List<Coin> loadCoinsFromCSV(String filePath) {
             long circulatingSupply = Long.parseLong(nextLine[circulatingSupplyIndex]);
 
             // Create a new Coin object
-            Coin coin = new Coin(rank,symbol, name, price, circulatingSupply);
-            coins.add(coin);
+            Coin coinnew = new Coin(rank,symbol, name, price, circulatingSupply);
+            coins.add(coinnew);
         }
     } catch (IOException e) {
         e.printStackTrace();
@@ -137,15 +137,15 @@ private List<Coin> loadCoinsFromCSV(String filePath) {
 
     public void displayTopNCoins(int n) {
         System.out.println("Displaying top " + n + " coins:");
-        List<Coin> topCoins = coins.stream()
-                .sorted(Comparator.comparingDouble(Coin::getPrice).reversed())
+        List<Coins> topCoins = coins.stream()
+                .sorted(Comparator.comparingDouble(Coins::getPrice).reversed())
                 .limit(n)
                 .collect(Collectors.toList());
 
         if (topCoins.isEmpty()) {
             ConsoleLogger.infoMethod("No coins available.");
         } else {
-            for (Coin coin : topCoins) {
+            for (Coins coin : topCoins) {
                 ConsoleLogger.infoMethod("Code: " + coin.getCode() + ", Name: " + coin.getName() + ", Price: " + coin.getPrice());
             }
         }
@@ -181,10 +181,10 @@ private List<Coin> loadCoinsFromCSV(String filePath) {
         }
     }
 
-    public Coin getCoinDetails(String coinCode) {
-        for (Coin coin : coins) {
+    public Coins getCoinDetails(String coinCode) {
+        for (Coins coin : coins) {
             if (coin.getCode().equals(coinCode)) {
-                return coin;
+                return coins;
             }
         }
         return null; // Coin not found

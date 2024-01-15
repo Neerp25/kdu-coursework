@@ -10,7 +10,7 @@ public class ExecuteTransaction implements Runnable {
     private CountDownLatch latch;
 
     // Assume you have lists of coins and traders
-    private List<Coin> coins;
+    private List<Coins> coins;
     private List<Trader> traders;
 
     public ExecuteTransaction(JsonNode transactionData, CountDownLatch latch) {
@@ -52,7 +52,7 @@ public class ExecuteTransaction implements Runnable {
         String walletAddress = transactionData.get("data").get("wallet_address").asText();
 
         // Placeholder logic for processing a BUY transaction
-        Coin coinToBuy = getCoinByCode(coinCode);
+        Coins coinToBuy = getCoinByCode(coinCode);
         Trader buyer = getTraderByWalletAddress(walletAddress);
 
         if (coinToBuy != null && buyer != null) {
@@ -77,7 +77,7 @@ public class ExecuteTransaction implements Runnable {
         String walletAddress = transactionData.get("data").get("wallet_address").asText();
 
         // Placeholder logic for processing a SELL transaction
-        Coin coinToSell = getCoinByCode(coinCode);
+        Coins coinToSell = getCoinByCode(coinCode);
         Trader seller = getTraderByWalletAddress(walletAddress);
 
         if (coinToSell != null && seller != null) {
@@ -99,7 +99,7 @@ public class ExecuteTransaction implements Runnable {
         double newPrice = transactionData.get("data").get("price").asDouble();
 
         // Placeholder logic for processing an UPDATE_PRICE transaction
-        Coin coinToUpdate = getCoinByCode(coinCode);
+        Coins coinToUpdate = getCoinByCode(coinCode);
 
         if (coinToUpdate != null) {
             // Perform the actual update price logic
@@ -117,7 +117,7 @@ public class ExecuteTransaction implements Runnable {
         int newVolume = transactionData.get("data").get("volume").asInt();
 
         // Placeholder logic for processing an ADD_VOLUME transaction
-        Coin coinToAddVolume = getCoinByCode(coinCode);
+        Coins coinToAddVolume = getCoinByCode(coinCode);
 
         if (coinToAddVolume != null) {
             // Perform the actual add volume logic
@@ -130,9 +130,9 @@ public class ExecuteTransaction implements Runnable {
         }
     }
 
-    private Coin getCoinByCode(String coinCode) {
+    private Coins getCoinByCode(String coinCode) {
         return coins.stream()
-                .filter(coin -> coin.getCode().equals(coinCode))
+                .filter(coins -> coins.getCode().equals(coinCode))
                 .findFirst()
                 .orElse(null);
     }

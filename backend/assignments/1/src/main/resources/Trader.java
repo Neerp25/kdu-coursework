@@ -78,18 +78,18 @@ public class Trader {
             balanceLock.unlock();
         }
     }
-    public void buyCoins(Coin coin, int quantity) {
+    public void buyCoins(Coins coin, int quantity) {
         try {
             balanceLock.lock();
             // Check if the trader has enough balance and the coin has enough volume
             if (balance >= coin.getPrice() * quantity && coin.getVolume() >= quantity) {
                 // Deduct the cost from the trader's balance
-                balance -= coin.getPrice() * quantity;
+                balance -= coins.getPrice() * quantity;
 
                 // Update the trader's portfolio or perform other necessary actions
                 // For example, add the bought coins to the trader's portfolio
 
-                ConsoleLogger.infoMethod("Coins bought successfully - Coin: " + coin.getCode() + ", Quantity: " + quantity);
+                ConsoleLogger.infoMethod("Coins bought successfully - Coin: " + coins.getCode() + ", Quantity: " + quantity);
             } else {
 
                 ConsoleLogger.infoMethod("\"Failed to buy coins - Insufficient balance or insufficient volume.");
@@ -112,11 +112,11 @@ public class Trader {
     }
 
 
-    public void sellCoins(Coin coin, int quantity) {
+    public void sellCoins(Coins coin, int quantity) {
         try {
             portfolioLock.lock();
             // Check if the trader has enough of the specified coin in their portfolio
-            if (portfolio.containsKey(coin.getCode()) && portfolio.get(coin.getCode()) >= quantity) {
+            if (portfolio.containsKey(coins.getCode()) && portfolio.get(coin.getCode()) >= quantity) {
                 // Perform the actual selling logic
                 portfolio.put(coin.getCode(), portfolio.get(coin.getCode()) - quantity);
 
