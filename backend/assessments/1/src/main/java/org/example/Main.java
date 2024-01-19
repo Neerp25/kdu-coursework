@@ -34,17 +34,86 @@ public class Main {
         return players;
     }
 
-    public List<String> getblowertakes(String Teamname, Map<String, List<Player>> team){
+    public static void getblowertakes40(String Teamname, Map<String, List<Player>> team){
 
 
-        List<Player> temp;
+        List<Player> temp= null;
 
         if(team.containsKey(Teamname)){
             temp = team.get(Teamname);
         }
-//        List<String> blower = team.entrySet().stream().filter((e -> Teamname.equals(e.getValue()));
 
-        return blower;
+        System.out.println("Blower with more40:");
+
+
+
+        for (Player p1: temp) {
+            if(p1.wicket>40){
+                System.out.println(p1.name);
+            }
+
+        }
+
+
+
+    }
+
+    public static void highestwicket(String Teamname, Map<String, List<Player>> team){
+
+
+        List<Player> temp= null;
+
+        if(team.containsKey(Teamname)){
+            temp = team.get(Teamname);
+        }
+
+        System.out.println("higest wickettaker:");
+        int high =0;
+        String highest ="";
+
+
+
+        for (Player p1: temp) {
+            if(high<p1.wicket){
+                high = p1.wicket;
+                highest= p1.name;
+            }
+
+        }
+
+        System.out.println("Highest Wicket taker:");
+        System.out.println(highest);
+
+
+
+    }
+
+    public static void highestruns(String Teamname, Map<String, List<Player>> team){
+
+
+        List<Player> temp= null;
+
+        if(team.containsKey(Teamname)){
+            temp = team.get(Teamname);
+        }
+
+        int high =0;
+        String highest ="";
+
+
+
+        for (Player p1: temp) {
+            if(high<p1.Runs){
+                high = p1.Runs;
+                highest= p1.name;
+            }
+
+        }
+
+        System.out.println("Highest Runner:");
+        System.out.println(highest);
+
+
 
     }
 
@@ -68,7 +137,12 @@ public class Main {
             }
         }
 
+        getblowertakes40("CSK",team);
+        highestwicket("CSK",team);
+        highestruns("CSK",team);
 
 
-}
+
+
+    }
 }
