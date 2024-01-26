@@ -24,8 +24,8 @@ public class SpeakerService {
             brand= "BOSE";
         }
         int price =  random.nextInt(5_000+1_000);
-        Speaker speaker = new Speaker(price,brand);
-        return speaker;
+        return new Speaker(price,brand);
+
     }
 
 

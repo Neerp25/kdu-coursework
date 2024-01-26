@@ -1,9 +1,8 @@
 package org.example.data;
 
-import jdk.jfr.DataAmount;
-import lombok.Data;
+
 import org.example.entity.Vehicle;
-import org.springframework.stereotype.Component;
+
 
 import java.util.ArrayList;
 import java.util.List;

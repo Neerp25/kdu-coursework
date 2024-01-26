@@ -23,7 +23,6 @@ public class TyreService {
             brand="BRIDESTONE";
         }
         int price = random.nextInt(5_000+1_000);
-        Tyre tyre = new Tyre(price,brand);
-        return tyre;
+        return new Tyre(price,brand);
     }
 }

@@ -2,7 +2,7 @@ package org.example.services;
 
 import org.example.entity.Vehicle;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
+
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Service;
 
@@ -41,7 +41,7 @@ public class VehicleService {
 
 
     public Vehicle mostExpecive(){
-        int n = vehicles.size();
+
         double max=-1;
         Vehicle veh = null;
         for(Vehicle temp:vehicles){
