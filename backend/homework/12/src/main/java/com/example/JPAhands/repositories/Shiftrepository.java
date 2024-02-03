@@ -14,8 +14,7 @@ public interface Shiftrepository extends JpaRepository<Shift, UUID> {
     List<Shift> findAllByTenantId(UUID tenantId);
 
     @Query("SELECT s FROM Shift s WHERE s.dateStart = :dateStart AND s.dateEnd = :dateEnd ORDER BY s.name ASC LIMIT 3")
-    static List<Shift> findTop3ShiftsByDateRange(@Param("dateStart") LocalDate startDate, @Param("dateEnd") LocalDate endDate) {
-        return null;
-    }
+    List<Shift> findTop3ShiftsByDateRange(@Param("dateStart") LocalDate startDate, @Param("dateEnd") LocalDate endDate);
+
 
 }

@@ -13,6 +13,9 @@ import java.util.UUID;
 @Repository
 public interface Userrepository extends JpaRepository<User, UUID> {
     List<User> findAllByTenantId(UUID tenantId);
+
+    @Modifying
+    @Transactional
     @Query(value = "UPDATE users SET username = :username, logged_in = :loggedIn, time_zone = :timeZone WHERE id = :userId", nativeQuery = true)
     int updateUserDetails(@Param("userId") UUID userId, @Param("username") String username, @Param("loggedIn") int loggedIn, @Param("timeZone") String timeZone);
 }

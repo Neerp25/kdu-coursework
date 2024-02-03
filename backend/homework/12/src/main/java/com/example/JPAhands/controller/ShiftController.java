@@ -30,7 +30,7 @@ public class ShiftController {
      */
 
     @PostMapping()
-    public ResponseEntity<String> addShift(@RequestBody ShiftType shift) {
+    public ResponseEntity<String> addShift(@RequestBody Shift shift) {
         shiftService.addShiftType(shift);
         return new ResponseEntity<>("Shift added successfully", HttpStatus.CREATED);
     }
@@ -38,8 +38,8 @@ public class ShiftController {
      GetMapping for Reterving all shifts and Return ResponseEntity with List of Shifts
      */
     @GetMapping()
-    public ResponseEntity<List<ShiftType>> getAllShifts(@RequestBody Requestdto requestDTO) {
-        List<ShiftType> shifts = shiftService.getAllShiftTypes(requestDTO.getTenantId());
+    public ResponseEntity<List<Shift>> getAllShifts(@RequestBody Requestdto requestDTO) {
+        List<Shift> shifts = shiftService.getAllShiftTypes(requestDTO.getTenantId());
         return ResponseEntity.ok(shifts);
     }
     /**
