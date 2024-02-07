@@ -1,0 +1,89 @@
+
+body {
+    margin: 0;
+}
+.Main-container{
+    display: inline-flexbox;
+}
+
+.Header-section {
+    text-align: left;
+    padding: 30px;
+    font-family: "Roboto", sans-serif;
+    font-size: medium;
+    font-weight: 120;
+    font-style: normal;
+    margin-bottom: 0%;
+}
+
+.main-heading {
+    color: rgb(59, 57, 57);
+    font-size: 520%;
+    margin-top: 0%;
+    margin-bottom: 0%;
+}
+
+.sub-heading {
+    margin-top: 0%;
+    color: rgb(120, 120, 120);
+    font-size: 200%;
+    margin-bottom: 0%;
+}
+
+.main-section {
+    display: flex;
+    justify-content: space-between;
+    font-family: "Roboto", sans-serif;
+    align-items: center;
+    padding: 20px;
+    margin-top: 0%;
+}
+
+.tempreature-main {
+    font-size: 120%;
+}
+
+.super-script {
+    font-size: 80%;
+    color: rgb(120, 120, 120);
+}
+
+.fisrt-main {
+    font-size: 3em;
+    font-family: "Roboto", sans-serif;
+    display: flex;  
+    margin-left: 1%;
+    margin-top: 0%;
+}
+
+.second-main {
+    text-align: left;
+    font-family: "Roboto", sans-serif;
+    color: rgb(120, 120, 120);
+    font-size: 200%;
+    margin: auto;
+}
+
+.footer-section {
+    display: flex;
+    justify-content: space-around;
+    font-family: "Roboto", sans-serif;
+    align-items: center;
+    padding: 10px;
+    margin-top: 2%;
+    margin-left:0%
+}
+
+.footer-section div {
+    text-align: center;
+}
+
+.footer-section p {
+    margin: 5px 0;
+}
+
+.footer-section img {
+    width: 100px;
+    height: 100px;
+}
+
