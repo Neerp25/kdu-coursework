@@ -2,7 +2,7 @@ const axios = require("axios");
 
 // log all the env variables
 console.log(
-  `PERSONAL_ACCESS_TOKEN_GITHUB: ${process.env.PERSONAL_ACCESS_TOKEN_GITHUB}`
+    `PERSONAL_ACCESS_TOKEN_GITHUB: ${process.env.PERSONAL_ACCESS_TOKEN_GITHUB}`
 );
 console.log(`SONAR_TOKEN: ${process.env.SONAR_TOKEN}`);
 console.log(`SONAR_HOST_URL: ${process.env.SONAR_HOST_URL}`);
@@ -43,11 +43,11 @@ async function createCommentWithMetricsTable(metrics) {
   // format metrics as a table
   const tableHeader = "| Metric | Value |\n| ------ | ----- |";
   const tableRows = metrics
-    .map(
-      (metric) =>
-        `| ${metric.key} | ${getMetricValue(metric.key, metric.value)} |`
-    )
-    .join("\n");
+      .map(
+          (metric) =>
+              `| ${metric.key} | ${getMetricValue(metric.key, metric.value)} |`
+      )
+      .join("\n");
 
   const commentBody = `${tableHeader}\n${tableRows}`;
 
@@ -65,15 +65,15 @@ async function createCommentWithMetricsTable(metrics) {
 
   try {
     const response = await axios.post(
-      apiUrl,
-      { body: commentBody },
-      axiosConfig
+        apiUrl,
+        { body: commentBody },
+        axiosConfig
     );
     console.log("Comment created successfully:", response.data);
   } catch (error) {
     console.error(
-      "Error creating comment:",
-      error?.response?.data || error.message
+        "Error creating comment:",
+        error?.response?.data || error.message
     );
     throw error;
   }
@@ -174,8 +174,8 @@ async function fetchMetricsData() {
     await createCommentWithMetricsTable(metrics);
   } catch (error) {
     console.error(
-      "Error fetching metrics data:",
-      error?.response?.data || error.message
+        "Error fetching metrics data:",
+        error?.response?.data || error.message
     );
     throw error;
   }
