@@ -29,27 +29,6 @@ public class configuration  {
         this.userService = userService;
     }
 
-    /**
-     * Configures the security filter chain for HTTP requests.
-     */
-    @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http
-                .csrf(AbstractHttpConfigurer::disable)
-                .authorizeHttpRequests(
-                        req -> req.antMatchers("/api/v1/auth/**")
-                                .permitAll()
-                                .anyRequest()
-                                .authenticated()
-                )
-                .userDetailsService(userService)
-                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-                .addFilterBefore((Filter) jwtAuthFilter, (Class<? extends Filter>) UsernamePasswordAuthenticationFilter.class);
-
-        return http.build();
-    }
-
-
     @Bean
     AuthenticationManager authenticationManager(AuthenticationConfiguration config) throws Exception {
         return config.getAuthenticationManager();
