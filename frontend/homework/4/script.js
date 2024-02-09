@@ -22,4 +22,6 @@ function addtodo() {
     todolistitem.appendChild(deletebutton);
 
     todolist.appendChild(todolistitem);
+
+    //just committing to check sonar build
 }
