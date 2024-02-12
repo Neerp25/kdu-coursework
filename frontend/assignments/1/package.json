@@ -2,7 +2,7 @@
   "name": "1",
   "version": "1.0.0",
   "description": "Assignment 1",
-  "main": "cypress.config.js",
+  "main": "",
   "scripts": {
     "run": "echo \"Error: no test specified\" && exit 1"
   },
