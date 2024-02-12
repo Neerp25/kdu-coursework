@@ -22,7 +22,7 @@ jobs:
         run: npm install -g sonarqube-scanner
 
       - name: Install dependencies
-        run: npm install
+        run: pwd && ls && npm install
 
       - name: SonarQube Scan
         run: |
