@@ -44,7 +44,7 @@ app.get('/api/members/:id',(req,res)=>{
     }
 });
 
-console.log(members);
+
 
 // update member
 app.put('/:id',(req,res)=>{
