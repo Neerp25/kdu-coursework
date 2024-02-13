@@ -25,7 +25,7 @@ app.post('/',(req,res)=>{
         
              return res.json(members);
 })
-console.log(members);
+
 
 
 // this route get all members
