@@ -1,0 +1,59 @@
+#header{
+    display: flex;
+    background: #28a745;
+    color: white;
+    justify-content: space-around;
+    
+   }
+   #searchbox{
+       height: 38%;
+       width: 380px;
+       margin-top: 20px;
+   }
+   #Mid-section{
+       border: 0.8px solid black;
+       height: 400px;
+       width: 60%;
+       margin: auto;
+       margin-top: 20px;
+       padding: 20px; 
+   }
+   #submitbtn{
+       background: #343a40;
+       color: white;
+       border-radius: 12%;
+       margin-left: 8px;
+       height: 8%;
+       width: 8%;
+   
+   }
+   #Add-itembox{
+       height: 6%;
+       width: 25%;
+       
+   }
+   
+   
+     
+     .todo-item {
+       list-style-type: none; 
+       margin-bottom: 8px;
+       border: 1px solid #ccc;
+       display: flex;
+       justify-content: space-between;
+       padding-top: 5px;
+       padding-bottom: 5px;
+       padding-left: 10px;
+       margin-bottom: 0%;
+       
+     }
+     
+     .todo-item button {
+       margin-right: 10px;
+       background-color: #dc3545; 
+       color: white;
+       border: none;
+       padding: 1px 6px;
+       border-radius: 3px;
+       cursor: pointer;
+     }
