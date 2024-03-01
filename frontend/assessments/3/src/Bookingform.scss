@@ -1,0 +1,59 @@
+
+$orange: #f08a5d;
+$white: white;
+$black: black;
+$font-family: 'Poppins', sans-serif;
+
+.booking-section {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ gap: 10px;
+}
+
+.heading-container {
+ width: 100%;
+ margin-top: 10px;
+ text-align: center;
+ background-color: $orange;
+ color: $white;
+ padding: 5px;
+ border-radius: 5px;
+}
+
+.section-heading {
+ margin: 0;
+}
+
+.booking-select,
+.booking-input {
+ background-color: $white;
+ color: $black;
+ padding: 5px;
+ border-radius: 5px;
+ margin-right: 10px;
+}
+
+.submit-button {
+ background-color: $orange;
+ color: $white;
+ padding: 5px 10px;
+ border: none;
+ border-radius: 5px;
+ cursor: pointer;
+
+ &:disabled {
+    background-color: $orange;
+    cursor: not-allowed;
+ }
+}
+
+.centered-heading {
+ text-align: center;
+ font-family: $font-family;
+ margin-top: 0%;
+}
+
+.date-section {
+ display: flex;
+}
