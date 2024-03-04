@@ -7,9 +7,13 @@
     padding: 20px;
     width: 75%;
     margin: 0 auto;
-   }
-   
-   .header {
+
+    @media (max-width: 768px) {
+        width: 90%; 
+    }
+}
+
+.header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -17,29 +21,33 @@
     padding: 3px;
     width: 900px;
     height: 30px;
-   }
-   .header-details{
+
+    @media (max-width: 768px) {
+        width: 90%; // Adjust header width for smaller screens
+    }
+}
+
+.header-details {
     display: flex;
-   }
-   
+}
 
-.wishlist-label {
+.wishlist-label,
+.wishlist-button {
     margin-left: 20px;
-   }
-   .wishlist-button{
-    margin-left: 20px;
+}
 
-   }
-   
-   
-   .stock-item-container {
+.stock-item-container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
-   }
-   
-   .stock-item {
+
+    @media (max-width: 768px) {
+        flex-direction: column; // Stack items vertically on smaller screens
+    }
+}
+
+.stock-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -47,49 +55,33 @@
     padding: 5px;
     width: 900px;
     height: 40px;
-   }
-   
-   .stock-item-price-container {
+
+    @media (max-width: 768px) {
+        width: 100%; // Full width for smaller screens
+    }
+}
+
+.stock-item-price-container {
     display: flex;
     align-items: center;
-   }
-   .material-symbols-outlined {
+}
+
+.material-symbols-outlined,
+#material-symbols-outlined-x {
     font-size: 20px; 
-    
     color: #1871c2; 
     cursor: pointer;
     margin-right: 18px;
-   }
-   #material-symbols-outlined-x{
-      font-size: 20px; 
+}
+
+#material-symbols-outlined-x {
     color: rgb(165, 18, 16);
-    cursor: pointer;
-    margin-right: 18px;
-   }
-   
-   .stock-price-spacing {
+}
+
+.stock-price-spacing {
     margin-right: 45px;
-      
-   }
-   .c{
+}
+
+.c {
     margin-right: 15px;
-   }
-   
-  
-   @media (max-width: 768px) {
-    .container {
-       width: 90%; 
-    }
-   
-    .header {
-       width: 90%; /* Adjust header width for smaller screens */
-    }
-   
-    .stock-item-container {
-       flex-direction: column; /* Stack items vertically on smaller screens */
-    }
-   
-    .stock-item {
-       width: 100%; /* Full width for smaller screens */
-    }
-   }
+}

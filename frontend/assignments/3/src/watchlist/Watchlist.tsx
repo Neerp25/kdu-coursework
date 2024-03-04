@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { removeFromWishlist } from '../Slices/stockSlice';
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
-import "./Watchlist.css";
+import "./Watchlist.scss";
 
 
 interface Stock {

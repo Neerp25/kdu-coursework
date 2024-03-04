@@ -5,7 +5,8 @@ import { RootState, AppDispatch } from '../Slices/store';
 import { setStocks, addToWishlist } from '../Slices/stockSlice';
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
-import "./StockList.css";
+import "./StockList.scss";
+import { Link } from 'react-router-dom';
 
 
 interface Stock {
@@ -69,7 +70,10 @@ const StocksList: React.FC = () => {
   <div className="stock-item-container">
     {currentItems.map((stock) => (
       <div key={stock.id} className="stock-item">
-        <h4>{stock.id}</h4>
+        
+        <Link key={stock.id} to={`/stock/${stock.id}${stock.name}`} style={{ textDecoration: 'none',color:"black" }}>
+      <h4>{stock.id}</h4>
+      </Link>
         <div className="stock-item-price-container">
           
           <h4 className="stock-price-spacing">{stock.price}</h4>

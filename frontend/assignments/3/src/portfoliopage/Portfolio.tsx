@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setTransactions, applyFilters, setLoading, setFilter, setFailedFilter, setStockFilter, setStartDate, setEndDate,toggleShowPassedTransactions, Transaction, } from '../Slices/transactionsSlice'; // Adjust the import path as necessary
 import { RootState } from '../Slices/store'; 
-import "./Portfolio.css";
+import "./Portfolio.scss";
 
 const Portfolio: React.FC = () => {
  const dispatch = useDispatch();
