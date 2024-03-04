@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twitter-Home-Page</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/line.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="style.css">
+ 
+</head>
+<body>
+    <div class="navigation-section">
+        <div class="profile-icon"> <img src="newtwt.avif" alt="image" height="50px" width="50px">
+        </div class="items">
+        <ul class="nav-links">
+            <li><span class="material-symbols-outlined">
+                home
+                </span> Home</li>
+            <li><span class="material-symbols-outlined">
+                search
+                </span> Explore</li>
+            <li><span class="material-symbols-outlined">
+                notifications
+                </span> Notifications</li>
+            <li><span class="material-symbols-outlined">
+                mail
+                </span> Messages</li>
+            <li><span class="material-symbols-outlined">
+                open_in_new
+                </span> Grok</li>
+            <li><span class="material-symbols-outlined">
+                featured_play_list
+                </span> Lists</li>
+            <li><span class="material-symbols-outlined">
+                bookmark
+                </span> Bookmarks</li>
+            <li><span class="material-symbols-outlined">
+                group
+                </span> Communities</li>
+            <li><img src="newtwt.avif" alt="image" height="35px" width="35px">
+                 Premium</li>
+            <li><span class="material-symbols-outlined">
+                person
+                </span> Profile</li>
+            <li><span class="material-symbols-outlined">
+                more_horiz
+                </span> More</li>
+            <li><button class="post-btn" id="postButton">Post</button></li>
+        </ul>
+        <div class="profile-info">
+            <img src="profile pic.png" alt="User Profile" height="50px" class="circle-image">
+            <div class="user-details">
+                <span class="user-name"> <b>Nitesh Gupta</b></span><br>
+                <span class="user-id"><i>@nit_hck</i></span>
+            </div>
+            <span class="material-symbols-outlined">
+                more_horiz
+                </span>
+        </div>
+    </div>
+    <div id ="Post-conatiner">
+        <div id="newPostForm" class="tweet-box">
+            <div class="wrapper">
+                <div> <img src="profile pic.png" alt="User Profile" height="50px" class="circle-image"></div>
+                <div class="input-box">
+                    <div class="tweet-area">
+                        <span class="placeholder" id="placeholder">What's happening?</span>
+                        <div id="postText" class="input editable" contenteditable="true" spellcheck="false"></div>
+                        <div class="input readonly" contenteditable="true" spellcheck="false"></div>
+                    </div>
+                    <div class="privacy">
+                        <i class="fas fa-globe-asia"></i>
+                        <span>Everyone can reply</span>
+                    </div>
+                </div>
+                <div class="bottom">
+                    <ul class="icons">
+                        <li><i class="uil uil-capture"></i></li>
+                        <li><i class="far fa-file-image"></i></li>
+                        <li><i class="fas fa-map-marker-alt"></i></li>
+                        <li><i class="far fa-grin"></i></li>
+                        <li><i class="far fa-user"></i></li>
+                    </ul>
+                    <div class="content">
+                        <span class="counter">100</span>
+                        <button class="tweet-btn" onclick="handlePost()">Post</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="postList"></div>       
+    </div>
+    <div id="message-conatiner">
+        <div id ="left-view">
+            <div id ="Message-header">Messages</div>
+            <div id="header-separator-left"></div>
+            <div id ="online-userdet">
+            <img src="profilepic2.jpg" alt="User Profile" height="50px" class="circle-image">
+            <span class="user-name"> <b>Sagun Sangawan</b></span><br>
+            <span class="user-id"><i>@SagunSangawan15</i></span>
+            </div>
+
+        </div>
+        <div id = "right view">
+            <div id="heading">
+                <span class="user-name"> <b>Sagun Sangawan</b></span><br>
+            </div>
+            <div id="header-separator-right"></div>
+            <div id ="display"></div>
+            <div id = "bottom-sec">
+                <input type="text" id="msgInput" placeholder="Start a new message">
+                <button id="sendMessage"><span class="material-symbols-outlined">
+                    send
+                    </span></button>
+            </div>
+            
+        </div>
+    </div>
+   
+    <script src="https://cdn.socket.io/4.7.4/socket.io.min.js" integrity="sha384-Gr6Lu2Ajx28mzwyVR8CFkULdCU7kMlZ9UthllibdOSo6qAiN+yXNHqtgdTvFXMT4" crossorigin="anonymous"></script>    
+<script src="script.js"></script>
+</body>
+</html>
