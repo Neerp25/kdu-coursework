@@ -1,0 +1,105 @@
+body {
+    background-color: #dedede;
+  }
+  
+  .product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 -10px; 
+  }
+  
+  /* Individual product */
+  .product {
+    box-sizing: border-box;
+    padding: 10px;
+    flex: 1 0 calc(25% - 20px); 
+    margin-bottom: 20px;
+  
+    &:hover {
+      transform: scale(1.05);
+    }
+  
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+  
+    p {
+      margin: 8px 0;
+    }
+  
+    a {
+      text-decoration: none;
+      color: #333;
+  
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  
+  /* Header Container */
+  #Header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2a2a72;
+    padding: 10px;
+    color: white;
+  }
+  
+  #Heading {
+    margin-top: 25px;
+    text-align: center;
+    margin-top: 25px;
+  
+    h1 {
+      color: #2a2a72;
+  
+      span {
+        color: black;
+      }
+    }
+  }
+  
+  /* Search Box */
+  #Searchbox {
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 8px;
+    border-radius: 5px;
+    color: black;
+  }
+  
+  /* Brand Filter Dropdown */
+  #brandFilter {
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 8px;
+    border-radius: 5px;
+    color: black;
+    margin-left: 1px;
+  }
+  
+  #lable {
+    margin-left: 350px;
+  }
+  
+  /* Sort Button */
+  #sort-btn button {
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 8px 15px;
+    border-radius: 5px;
+    color: black;
+    cursor: pointer;
+    margin-left: 10px;
+  
+    &:hover {
+      background-color: #ddd;
+      color: black;
+    }
+  }
+  
