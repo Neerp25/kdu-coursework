@@ -1,0 +1,118 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.viewport {
+    height: 100vh;
+}
+
+.Dashboard {
+    background-color: #1871c2;
+    color: white;
+    padding: 10px;
+    margin: 8px 3px;
+    border-radius: 2px;
+    border: 1px solid black;
+    text-align: center;
+    width: 100%;
+    font-size: 24px;
+}
+
+.Mid-section {
+    display: flex;
+    width: 100%;
+    margin: 0 3px;
+}
+
+.display {
+    flex: 3;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.top-display {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    border: 1px solid black;
+    width: 130px;
+}
+
+.icon img {
+    margin-right: 10px;
+}
+
+.currentPrice {
+    font-weight: bold;
+    border: 1px solid black;
+    height: 38px;
+    width: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#EnterQty {
+    padding: 5px;
+    margin-right: 10px;
+}
+
+#buy, #sell {
+    padding: 8px 15px;
+    background-color: #4CAF50; 
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#sell {
+    background-color: #f44336; 
+}
+
+.bar-graph-container {
+    height: 500px;
+    position: relative;
+    border: 1px solid #ccc;
+    overflow: hidden;
+}
+
+.bar {
+    width: 20px;
+    position: absolute;
+}
+
+#History {
+    flex: 1;
+    padding: 20px;
+    border: 1px solid #ccc;
+    height: 540px;
+}
+
+.input {
+    margin-bottom: 10px;
+}
+
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 100px);
+    grid-template-rows: repeat(auto-fill, 125px);
+    gap: 5px;
+}
+
+.bar.green {
+    background-color: #4CAF50; 
+}
+
+.bar.red {
+    background-color: #f44336; 
+}

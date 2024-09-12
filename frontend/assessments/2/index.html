@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Market Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="viewport">
+        <div class="Dashboard">KDU Stock Market Dashboard</div>
+        <div class="Mid-section">
+            <div class="display">
+                <div class="top-display">
+                    <div class="icon">
+                        <img src="image.jpg" alt="Image of Zomato" width="50" height="40">
+                        <div>Zomato</div>
+                    </div>
+                    <div id="currentPrice">Price</div>
+                    <input type="text" id="EnterQty" placeholder="Enter Qty">
+                    <button id="buy">Buy</button>
+                    <button id="sell">Sell</button>
+                </div>
+                <div class="bar-graph-container" id="barGraph">
+                    <div class="grid"></div>
+                </div>
+            </div>
+            <div id ="History">
+                History
+    
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.socket.io/4.7.4/socket.io.min.js" integrity="sha384-Gr6Lu2Ajx28mzwyVR8CFkULdCU7kMlZ9UthllibdOSo6qAiN+yXNHqtgdTvFXMT4" crossorigin="anonymous"></script>
+    <script>
+        const socket = io("http://localhost:8000");
+
+        function addNewPriceToGraph(newPrice) {
+            const barGraphContainer = document.querySelector('.bar-graph-container .grid');
+            const bar = document.createElement('div');
+            bar.classList.add('bar', newPrice >= 0 ? 'green' : 'red');
+            bar.style.height = `${Math.abs(newPrice)}px`;
+            bar.style.bottom = '0';
+            bar.style.left = `${barGraphContainer.children.length * 25}px`;
+            barGraphContainer.appendChild(bar);
+        }
+        function updateDisplayedPrice(newPrice) {
+            const priceDiv = document.getElementById('currentPrice');
+            priceDiv.textContent = `Price: ${newPrice}`;
+        }
+        function Updatehistory(){
+            const priceDiv = document.getElementById('History');
+            const bar = document.createElement('div');
+            bar.textContent = `100 Stock BUY`;
+            priceDiv.appendChild(bar);
+        }
+        socket.on('priceUpdate', (priceUpdateData) => {
+            console.log('Price Update:', priceUpdateData);
+            addNewPriceToGraph(priceUpdateData.newPrice);
+            updateDisplayedPrice(priceUpdateData.newPrice);
+            Updatehistory();
+        });
+</script>
+</body>
+</html>
