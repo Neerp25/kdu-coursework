@@ -1,0 +1,15 @@
+{
+  "name": "1",
+  "version": "1.0.0",
+  "description": "Assignment 1",
+  "main": "",
+  "scripts": {
+    "run": "echo \"Error: no test specified\" && exit 1"
+  },
+  "option": "-v",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "sonarqube-scanner": "^3.3.0"
+  }
+}
