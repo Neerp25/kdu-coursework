@@ -1,0 +1,51 @@
+#mid-section{
+    display: flex;
+}
+body{
+    background: #ffe98e;
+    padding: 20px;
+}
+
+#Skillbox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #a5d8ff;
+    padding: 12px;
+    height: 350px;
+    width: 450px;
+    margin: 20px;
+    border: 1.5px solid #f4c15c;
+}
+#top-section{
+    margin-left: 22px;
+}
+
+#heading {
+    color: #e3992c;
+    margin-top: 1px;
+}
+
+#skilltag{
+    align-self: first baseline;
+    color: #33a04a;
+}
+
+#hobbiesbox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #b2f2bb;
+    padding: 12px;
+    height: 350px;
+    width: 450px;
+    margin: 20px;
+    border: 1.5px solid #f4c15c;
+}
+
+
+
+#hobbytag{
+    align-self: first baseline;
+    color: #33a04a;
+}
